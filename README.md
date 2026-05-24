@@ -1,12 +1,2 @@
-# Javascript-basics-
-Rock,paper,scissor
-var A = parseInt("10")
-function abc(A)
-{ if(A >= 1)
-{ return "rock";
-}
-else if(A <= -1) 
-return "paper";
-}
-return "scissor";
-console.log("Output =",abc(A));
+# Javascript
+
