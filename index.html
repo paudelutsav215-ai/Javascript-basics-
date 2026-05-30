@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein JavaScript Taschenrechner</title>
+    <title>My JavaScript Calculator</title>
     
-    <!-- 🎨 Das Design (CSS) -->
     <style>
         body { 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
-            background-color: #f0f2f5; 
+            background-color: #f0f2f5; /* Light grey background that's easy on the eyes */
             font-family: Arial, sans-serif; 
             margin: 0; 
         } 
         
         .calculator { 
-            background-color: #333;
+            background-color: #333; /* Dark contrast for a sleek "Dark Mode" look */
             padding: 20px; 
             border-radius: 10px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
@@ -38,7 +37,7 @@
             margin-bottom: 15px; 
         } 
         
-        
+        /* CSS Grid keeps all buttons perfectly aligned in rows and columns */
         .buttons { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -52,13 +51,14 @@
             border: none; 
             border-radius: 5px; 
             background-color: #e0e0e0; 
-            transition: background 0.2s;
+            transition: background 0.2s; /* Smooth hover transition for better UX */
         } 
         
         button:hover { 
             background-color: #d4d4d4; 
         } 
 
+        /* Distinct orange accent color for mathematical operators */
         button.operator { 
             background-color: #ff9500; 
             color: white; 
@@ -68,6 +68,7 @@
             background-color: #e08500; 
         } 
         
+        /* Red warning colors for the destructive keys (C and Backspace) */
         button.clear { 
             background-color: #ff3b30; 
             color: white; 
@@ -80,65 +81,68 @@
 </head>
 <body>
 
-    <!-- 🏗️ Das Grundgerüst (HTML) -->
     <div class="calculator">
-        <!-- Das Display ist 'readonly', damit man nicht mit der Handytastatur reinfuschen kann -->
         <input type="text" id="display" readonly>
         
         <div class="buttons">
-            <!-- Reihe 1 -->
             <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="clear" onclick="backspace()">⌫</button>
             <button class="operator" onclick="appendToDisplay('/')">/</button>
             <button class="operator" onclick="appendToDisplay('*')">*</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
             
-            <!-- Reihe 2 -->
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
             
-            <!-- Reihe 3 -->
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
             
-            <!-- Reihe 4 -->
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('0')">0</button>
+            <button class="operator" onclick="calculate()">=</button>
             
-            <!-- Komma -->
+            <button onclick="appendToDisplay('0')">0</button>
             <button onclick="appendToDisplay('.')">.</button>
         </div>
     </div>
 
-    <!-- 🧠 Die Logik (JavaScript) -->
     <script>
         const display = document.getElementById('display'); 
 
+        // Appends tapped numbers or symbols to the end of the current display value
         function appendToDisplay(digit) { 
             display.value += digit; 
         } 
 
+        // Resets the screen instantly back to empty
         function clearDisplay() { 
             display.value = ''; 
         } 
 
+        // NEW: Removes only the very last character entered (Backspace function)
+        function backspace() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        // Processes and solves the mathematical string showing in the display window
         function calculate() { 
             const toEval = display.value; 
             
+            // Safety check: Only execute calculation if something is actually typed out
             if (toEval !== undefined && toEval !== null && toEval.length > 0) { 
                 let eva; 
                 try { 
-                    console.log(`Berechne Wert: '${display.value}'`); 
-                    eva = eval(toEval); 
+                    console.log(`Evaluating calculation string: '${display.value}'`); 
+                    eva = eval(toEval); // Uses standard built-in eval function for arithmetic string solving
                 } catch (error) { 
-                    console.error("Fehler bei der Berechnung:", error); 
+                    console.error("Calculation failure tracking:", error); 
                 } 
                 
+                // If evaluation fails (like typing "5++"), it cleanly shows "Error" instead of breaking the browser app
                 display.value = eva !== undefined ? eva : "Error"; 
             } 
         }
