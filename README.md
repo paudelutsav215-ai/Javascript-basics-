@@ -2,7 +2,7 @@
 
 Ein kleiner, übersichtlicher Web-Taschenrechner, der komplett ohne dicke Frameworks auskommt – einfach nur pures HTML, CSS und JavaScript. 
 
-Ich habe diese App gebaut, um mich praktisch auf meine Wunsch-Ausbildung zum **Fachinformatiker für Anwendungsentwicklung** vorzubereiten. Mir war es wichtig, nicht nur graue Theorie zu lernen, sondern direkt etwas zu programmieren, das man auch anfassen und benutzen kann.
+Ich habe diese App gebaut, um mich praktisch auf meine Wunsch-Ausbildung zum Fachinformatiker für Anwendungsentwicklung vorzubereiten. Mir war es wichtig, nicht nur graue Theorie zu lernen, sondern direkt etwas zu programmieren, das man auch anfassen und benutzen kann.
 
 🔗 [Klick hier, um die Live-Demo auszuprobieren!](https://paudelutshab-ai.github.io/Javascript-basics-/)
 
