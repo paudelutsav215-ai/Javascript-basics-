@@ -4,7 +4,7 @@ Ein minimalistischer, responsiver und mobilfreundlicher Web-Taschenrechner, entw
 
 Dieses Projekt habe ich zur Vorbereitung auf eine Ausbildung zum **Fachinformatiker für Anwendungsentwicklung** erstellt, um meine Grundlagen in der Webentwicklung und DOM-Manipulation zu vertiefen.
 
-🔗 **[Live-Demo ansehen] (https://paudelutshab-ai.github.io/Javascript-basics/)**
+🔗 **[Live-Demo ansehen](https://paudelutshab-ai.github.io/Javascript-basics/)**
 
 
 ---
