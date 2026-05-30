@@ -32,5 +32,5 @@ Das war ein super Projekt, um die Grundlagen zu festigen. Besonders viel mitgeno
 
 ## 📬 Kontakt & Über mich
 * **Mein Name:** Utshab Paudel
-* **Mein GitHub-Profil:** [paudelutshab-ai](https://github.com/paudelutshab-ai)**
+* **Mein GitHub-Profil:** [paudelutshab-ai](https://github.com/paudelutshab-ai)
 * **Mein Ziel:** Ich suche aktuell motiviert nach einer Ausbildungsstelle als Fachinformatiker für Anwendungsentwicklung. Wenn Ihnen mein kleiner Rechner gefällt, freue ich mich sehr über eine Nachricht oder ein Feedback!
